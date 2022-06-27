@@ -1,0 +1,24 @@
+package com.tutorial.kafka.springboot.config;
+
+// a spring bean to configure the kafka topic
+
+import org.apache.kafka.clients.admin.NewTopic;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.TopicBuilder;
+
+@Configuration
+public class KafkaTopicConfig {
+
+    @Bean
+    public NewTopic aNewTopic() {
+        return TopicBuilder.name("aNewTopic")
+                .build();
+    }
+
+    @Bean
+    public NewTopic aNewJSONTopic() {
+        return TopicBuilder.name("aNewTopic_JSON")
+                .build();
+    }
+}
